@@ -1,16 +1,16 @@
-# 🧠 My CNN Model
+# 🩺 Chest X-Ray Pneumonia Classification
 
-This project implements a **Convolutional Neural Network (CNN)** for image classification.  
-It is developed and tested inside a single **Jupyter Notebook** for simplicity and easy experimentation.  
-The model can be trained on datasets like **MNIST** or **CIFAR-10**.
+This project fine-tunes **ResNet50** to classify chest X-rays into **Pneumonia** or **Normal** cases.  
+It is implemented entirely in a single **Jupyter Notebook** for simplicity.  
+The dataset used is the [Kaggle Chest X-ray Pneumonia dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
 
 ---
 
 ## 📂 Project Structure
 ```
 
-├─ my\_cnn\_model.ipynb     # main notebook (training + evaluation)
-└─ requirements.txt       # dependencies
+├─ chest\_xray\_pneumonia.ipynb   # main notebook (data, training, evaluation, predictions)
+└─ requirements.txt             # dependencies
 
 ````
 
@@ -20,8 +20,8 @@ The model can be trained on datasets like **MNIST** or **CIFAR-10**.
 
 Clone the repository:
 ```bash
-git clone https://github.com/SamaNawar964/my-cnn-model.git
-cd my-cnn-model
+git clone https://github.com/SamaNawar964/chest-xray-pneumonia.git
+cd chest-xray-pneumonia
 ````
 
 Install dependencies:
@@ -33,20 +33,20 @@ pip install -r requirements.txt
 Open the notebook:
 
 ```bash
-jupyter notebook my_cnn_model.ipynb
+jupyter notebook chest_xray_pneumonia.ipynb
 ```
 
 ---
 
 ## 📊 Results
 
-* **Validation Accuracy**: \~98% on MNIST
-* **Test Accuracy**: \~97%
+* **Validation Accuracy**: \~75%
+* **Test Accuracy**: \~81%
 
 Sample predictions:
 
-* Digit "7" → 0.99 confidence
-* Digit "3" → 0.97 confidence
+* Pneumonia → Confidence 0.87
+* Normal → Confidence 0.91
 
 ---
 
@@ -65,18 +65,19 @@ The notebook includes plots of training history:
 * TensorFlow / Keras
 * NumPy
 * Matplotlib
+* OpenCV
 
 ---
 
 ## 🚀 Future Improvements
 
-* Extend to more complex datasets (CIFAR-10, CIFAR-100).
-* Add data augmentation for better generalization.
-* Experiment with different CNN architectures (VGG, ResNet, EfficientNet).
+* Try other CNN architectures (EfficientNet, InceptionV3).
+* Add more aggressive data augmentation.
+* Deploy model as a web app (Flask/FastAPI).
 
 ---
 
 ## 📌 Acknowledgements
 
-* Dataset: [MNIST](http://yann.lecun.com/exdb/mnist/) / [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html)
-* CNN concepts inspired by Deep Learning best practices.
+* Dataset: [Chest X-ray Pneumonia (Kaggle)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+* Base Model: [ResNet50](https://arxiv.org/abs/1512.03385)
